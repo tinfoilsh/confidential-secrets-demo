@@ -1,0 +1,26 @@
+cvm-version: 0.11.1
+cpus: 2
+memory: 2048
+
+# The keyserver this deployment fetches DEMO_SECRET from at boot. Measured:
+# set it to your keyserver's real domain before releasing.
+vault-url: https://keys.example.com
+
+networks:
+  web:
+
+containers:
+  - name: "demo"
+    image: "ghcr.io/tinfoilsh/confidential-secrets-demo@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    restart: always
+    networks: [web]
+    secrets:
+      - DEMO_SECRET
+
+shim:
+  listen-port: 443
+  upstream-port: 8080
+  paths:
+    - /
+    - /health
+    - /prove
