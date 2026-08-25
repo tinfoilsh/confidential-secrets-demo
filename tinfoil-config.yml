@@ -2,9 +2,9 @@ cvm-version: 0.11.1
 cpus: 2
 memory: 2048
 
-# The keyserver this deployment fetches DEMO_SECRET from at boot. Measured:
-# set it to your keyserver's real domain before releasing.
-vault-url: https://keys.example.com
+# The keyserver this deployment fetches DEMO_SECRET from at boot.
+# This value is measured into the enclave attestation.
+vault-url: https://keys.box2.tinfoil.sh:9443
 
 networks:
   web:
