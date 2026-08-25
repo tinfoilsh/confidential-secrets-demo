@@ -2,10 +2,6 @@ cvm-version: 0.11.1
 cpus: 2
 memory: 2048
 
-# The keyserver this deployment fetches DEMO_SECRET from at boot.
-# This value is measured into the enclave attestation.
-vault-url: https://keys.tanyaverma.sh:9443
-
 networks:
   web:
 
@@ -14,8 +10,6 @@ containers:
     image: "ghcr.io/tinfoilsh/confidential-secrets-demo@sha256:0000000000000000000000000000000000000000000000000000000000000000"
     restart: always
     networks: [web]
-    secrets:
-      - DEMO_SECRET
 
 shim:
   listen-port: 443
