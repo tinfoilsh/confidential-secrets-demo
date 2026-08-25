@@ -4,7 +4,7 @@ memory: 2048
 
 # The keyserver this deployment fetches DEMO_SECRET from at boot.
 # This value is measured into the enclave attestation.
-vault-url: https://keys.box2.tinfoil.sh:9443
+vault-url: https://keys.tanyaverma.sh:9443
 
 networks:
   web:
