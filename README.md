@@ -5,7 +5,7 @@ customer-run keyserver — released only to this repo's attested releases —
 and proves possession without ever disclosing it.
 
 At boot, the enclave fetches `DEMO_SECRET` from the keyserver pinned in
-`tinfoil-config.yml` (`vault-url`) and injects it as an env var. The workload
+`tinfoil-config.yml` (`keyserver-url`) and injects it as an env var. The workload
 exposes:
 
 - `GET /` — `{"secret_present": true}`
@@ -15,7 +15,7 @@ exposes:
 ## Deploy
 
 1. Run a [keyserver](https://github.com/tinfoilsh/keyserver) at a domain you
-   control, and set that domain as `vault-url` in `tinfoil-config.yml`.
+   control, and set that domain as `keyserver-url` in `tinfoil-config.yml`.
 2. Trigger the **Tinfoil Release** workflow with a version — it builds the
    image, pins its digest into the config, tags, measures, and publishes a
    Sigstore-attested release.
