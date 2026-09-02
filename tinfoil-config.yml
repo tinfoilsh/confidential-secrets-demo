@@ -10,7 +10,7 @@ networks:
 
 containers:
   - name: "demo"
-    image: "ghcr.io/tinfoilsh/confidential-secrets-demo@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    image: "ghcr.io/tinfoilsh/confidential-secrets-demo@sha256:3548fe5b23c9dd780061d1d579fea11232f1fff993f5cd211dc392ed52216656" # v0.0.5
     restart: always
     networks: [web]
     secrets:
